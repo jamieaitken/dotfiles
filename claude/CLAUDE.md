@@ -34,3 +34,5 @@ if err != nil {
 ```
 
 - **Logging**: Use `log/slog` for all logging. Use `slog.InfoContext`, `slog.ErrorContext`, `slog.WarnContext` etc. with structured key-value attributes. Never use the `log` package or `fmt.Println` for logging
+- **Project layout**: All Go projects must follow the [golang-standards/project-layout](https://github.com/golang-standards/project-layout) structure (e.g., `cmd/`, `internal/`, `pkg/`, `api/`, `configs/`, `scripts/`, etc.)
+- **CLI entrypoints**: All Go applications must use [spf13/cobra](https://github.com/spf13/cobra) for their entrypoints. Each application has a single root command with subcommands for each concern (e.g., `serve` for the HTTP server, `mcp` for the MCP server, `migrate` for database migrations, etc.)
